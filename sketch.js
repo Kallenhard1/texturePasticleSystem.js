@@ -21,7 +21,21 @@ function draw() {
     ps.addParticle();
   }
   
-  //drawVector(wind, createVector(width/2, 50, 0), 500);
+ function drawVector(v, pos, scayl) {
+  push();
+  
+  let arrowsize = 4;
+  
+  translate(pos.x, pos.y);
+  stroke(255);
+  
+  rotate(v.heading());
+  
+  let len = v.mag()*scayl;
+  line(0, 0, len, 0);
+  fill(100);
+  ellipse(len, 0, 12, 12);
+  //line(len, 0, len - arrowsize, -len/2);
+  pop();
 }
-//Now just left draw the vector (wind).
 
